@@ -36,7 +36,7 @@ dump_sw_raid()
         config_kdump_fs
 
         report_system_info
-	report_file /etc/fstab
+
         trigger_sysrq_crash
     else
         rm -f "${C_REBOOT}"
