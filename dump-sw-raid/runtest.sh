@@ -34,7 +34,7 @@ dump_sw_raid()
 
         config_sw_raid
         config_kdump_fs
-
+	report_file /etc/fstab
         report_system_info
 
         trigger_sysrq_crash
