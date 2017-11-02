@@ -1,0 +1,9 @@
+[General]
+name=/kdump-test/crash-readonly
+owner="Yuming Liu"
+description="kdump-test for crash-readonly"
+
+[restraint]
+entry_point=./runtest.sh
+repoRequires=lib
+use_pty=true
