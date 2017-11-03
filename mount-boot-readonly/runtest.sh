@@ -20,6 +20,8 @@ mount_boot_readonly()
 	else
 		log_error "Could not create kdump image"
 	fi
+	
+	append_config "force_no_rebuild 1"
 
 	mount -o remount,ro /boot
 	[ $? -eq 0 ] || log_error "remount /boot failed!"
