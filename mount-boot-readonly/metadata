@@ -1,0 +1,9 @@
+[General]
+name=/kdump-test/mount-boot-readonly
+owner="Yuming Liu"
+description="kdump-test for mount-boot-readonly"
+
+[restraint]
+entry_point=./runtest.sh
+repoRequires=lib
+use_pty=true
