@@ -1,0 +1,9 @@
+[General]
+name=/kdump-test/dump-scp
+owner="Yuming Liu"
+description="kdump-test for dumping scp"
+
+[restraint]
+entry_point=./runtest.sh
+repoRequires=lib
+use_pty=true
