@@ -45,6 +45,16 @@ mount_boot_readonly()
 	else
 	log_error "FAIL,kdump.img still rebuilt"
 	fi
+# delete 'force_no_rebuild' and restart kdump
+	log_info "removing force_no_rebuild"
+	sed -i /^force_no_rebuild/d /etc/kdump.conf
+
+	log_info "restarting kdump service"
+	kdupmctl restart || log_info "PASS,kdump fail to rebuild img as expected"
+	if [ $? -ne 0 ]; then
+		log_error "FAIL, kdump rebuilt img when /boot is read-only"
+	fi	
+
 
 }
 
