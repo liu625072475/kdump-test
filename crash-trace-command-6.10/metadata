@@ -1,0 +1,9 @@
+[General]
+name=/kdump-test/crash-trace-command-6.10
+owner="Yuming Liu"
+description="kdump-test for crash-trace-command-6.10"
+
+[restraint]
+entry_point=./runtest.sh
+repoRequires=lib
+use_pty=true
