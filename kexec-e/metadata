@@ -1,0 +1,9 @@
+[General]
+name=/kdump-test/kexec-e
+owner="yumliu"
+description="kexec -e to boot to new kernel."
+
+[restraint]
+entry_point=./runtest.sh
+repoRequires=lib
+use_pty=true
