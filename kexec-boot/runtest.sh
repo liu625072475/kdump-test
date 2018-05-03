@@ -32,7 +32,7 @@ kexec_boot()
         report_system_info
 
         # load new kernel
-        local cmdline="$(cat /proc/cmdline) rd.memdebug=3 earlyprintk=serial"
+        local cmdline="$(cat /proc/cmdline) rd.memdebug=3"
         local cmd="kexec -l"
 
         # if secureboot is enabled
@@ -42,7 +42,7 @@ kexec_boot()
             [ "$securelevel" == "1" ] && cmd="${cmd} -s"
         fi
 
-        ${cmd} /boot/vmlinuz-"$KEXEC_VER" --initrd=/boot/initramfs-"$KEXEC_VER".img --command-line="${cmdline}"
+        ${cmd} /boot/vmlinuz-"$KEXEC_VER" --initrd=/boot/initrd-"$KEXEC_VER".img --command-line="${cmdline}"
         [ "$(cat /sys/kernel/kexec_loaded)" = "0" ] && log_error "- Loading new kernel failed."
 
         log_info "- Load new kernel $KEXEC_VER successful."
